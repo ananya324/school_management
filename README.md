@@ -1,19 +1,24 @@
 # 📍 Educase - School Management API
 
-Educase is a RESTful School Management API built using Node.js, Express.js, and MySQL that allows users to register schools and retrieve nearby schools based on geographical coordinates using distance-based sorting.
+Educase is a RESTful backend API built using Node.js, Express.js, and MySQL that allows users to add school details and retrieve nearby schools sorted by distance using geographical coordinates.
 
-The project uses the Haversine Formula to calculate distances between user and school locations and returns schools sorted from nearest to farthest.
+The system uses the Haversine Formula to calculate real-world distances between the user and schools and returns results sorted from nearest to farthest.
 
 ---
 
 # 🚀 Live Demo
 
 ## 🌐 Live API
+
 https://schoolmanagement-production-21cd.up.railway.app
 
-## 📮 Postman Collection
-https://maintenance-astronomer-28491974-7692070.postman.co/workspace/Personal-Workspace~a05113b0-9bc1-4f36-89f7-553385e38d42/collection/47014699-dcc0e09e-c70f-4c95-a42a-434e394a3685?action=share&creator=47014699
+---
 
+## 📮 Postman Collection
+
+Postman collection is included inside the repository:
+
+- `postman/Educase-APIs.json`
 ---
 
 # ⚙️ Tech Stack
@@ -23,21 +28,21 @@ https://maintenance-astronomer-28491974-7692070.postman.co/workspace/Personal-Wo
 - MySQL
 - mysql2
 - dotenv
-- Railway
-- Postman
+- Railway (Deployment)
+- Postman (API Testing)
 
 ---
 
 # ✨ Features
 
-- Add school details
-- Fetch schools sorted by nearest distance
+- Add school with name, address, latitude, longitude
+- Retrieve schools sorted by nearest distance
 - RESTful API architecture
 - MySQL database integration
 - Environment variable support
 - Distance calculation using Haversine Formula
-- Fully deployed backend using Railway
-- Error handling and validation
+- Fully deployed backend on Railway
+- Proper error handling and validation
 
 ---
 
@@ -58,10 +63,13 @@ backend/
 ├── utils/
 │   └── distance.js
 │
-├── .env
-├── .gitignore
-├── package.json
+├── postman/
+│   ├── Educase-APIs.json
+│  
+│
 ├── server.js
+├── package.json
+├── .env
 └── README.md
 ```
 
@@ -125,7 +133,7 @@ USE school_management;
 
 ---
 
-## Create Schools Table
+## Create Table
 
 ```sql
 CREATE TABLE schools (
@@ -140,7 +148,7 @@ CREATE TABLE schools (
 
 ---
 
-# ▶️ Running the Application
+# ▶️ Running the Project
 
 ## Development Mode
 
@@ -160,7 +168,7 @@ node server.js
 
 # 🌐 Server
 
-Backend runs on:
+Local server runs at:
 
 ```txt
 http://localhost:3000
@@ -178,11 +186,15 @@ http://localhost:3000
 POST /addSchool
 ```
 
-## Live Endpoint
+---
+
+## Live URL
 
 ```txt
 https://schoolmanagement-production-21cd.up.railway.app/addSchool
 ```
+
+---
 
 ## Request Body
 
@@ -195,6 +207,8 @@ https://schoolmanagement-production-21cd.up.railway.app/addSchool
 }
 ```
 
+---
+
 ## Success Response
 
 ```json
@@ -202,6 +216,8 @@ https://schoolmanagement-production-21cd.up.railway.app/addSchool
   "message": "School added successfully"
 }
 ```
+
+---
 
 ## Error Response
 
@@ -213,7 +229,7 @@ https://schoolmanagement-production-21cd.up.railway.app/addSchool
 
 ---
 
-# 2️⃣ List Schools (Sorted by Distance)
+# 2️⃣ Get Schools (Sorted by Distance)
 
 ## Endpoint
 
@@ -221,11 +237,15 @@ https://schoolmanagement-production-21cd.up.railway.app/addSchool
 GET /listSchools?latitude=28.7&longitude=77.1
 ```
 
-## Live Endpoint
+---
+
+## Live URL
 
 ```txt
 https://schoolmanagement-production-21cd.up.railway.app/listSchools?latitude=28.7&longitude=77.1
 ```
+
+---
 
 ## Success Response
 
@@ -242,6 +262,8 @@ https://schoolmanagement-production-21cd.up.railway.app/listSchools?latitude=28.
 ]
 ```
 
+---
+
 ## Error Response
 
 ```json
@@ -252,38 +274,53 @@ https://schoolmanagement-production-21cd.up.railway.app/listSchools?latitude=28.
 
 ---
 
-# 📍 Distance Calculation Logic
+# 📍 Distance Calculation
 
 This project uses the Haversine Formula to calculate the distance between:
 
-- User Location
-- School Location
+- User coordinates
+- School coordinates
 
 Schools are returned sorted from nearest to farthest.
 
 ---
 
-# 🧪 API Testing
+# 🧪 API Testing (Postman)
 
-You can test APIs using:
+All APIs were tested using Postman.
 
-- Postman
-- Thunder Client
-- Hoppscotch
+## Postman Collection (inside repo)
+
+- `postman/Educase-APIs.json` → Import into Postman
+- `postman/postman.md` → API usage documentation
+
+👉 Import the JSON file into Postman and run directly.
 
 ---
 
 # ☁️ Deployment
 
-This project is deployed using:
-
-- Railway (Backend + MySQL)
-
----
-
-# 🔒 Environment Security
-
-Sensitive credentials are stored securely using environment variables with `.env`.
+- Backend hosted on Railway
+- MySQL database integrated with Railway
 
 ---
 
+# 🔒 Security
+
+All sensitive credentials are managed using environment variables (`.env` file).
+
+---
+
+# 📈 Future Improvements
+
+- Authentication & Authorization
+- Admin Dashboard
+- Pagination
+- Search & Filtering
+- Docker Support
+- Swagger API Documentation
+- Unit Testing
+
+# ⭐ Support
+
+If you liked this project, consider giving it a star ⭐ on GitHub.

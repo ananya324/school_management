@@ -308,19 +308,3 @@ All APIs were tested using Postman.
 # 🔒 Security
 
 All sensitive credentials are managed using environment variables (`.env` file).
-
----
-
-# 📈 Future Improvements
-
-- Authentication & Authorization
-- Admin Dashboard
-- Pagination
-- Search & Filtering
-- Docker Support
-- Swagger API Documentation
-- Unit Testing
-
-# ⭐ Support
-
-If you liked this project, consider giving it a star ⭐ on GitHub.

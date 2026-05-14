@@ -80,7 +80,7 @@ backend/
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/educase-school-management-api.git
+git clone [https://github.com/your-username/educase-school-management-api.git](https://github.com/ananya324/school_management.git)
 ```
 
 ---
